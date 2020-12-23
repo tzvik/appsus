@@ -1,0 +1,42 @@
+.app-header {
+    background-color: #1a1406;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+
+.app-header h1 {
+    font-size: 2em;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.app-header ul {
+    list-style: none;
+    display: flex;
+    margin-right: 10px;
+    
+}
+
+.app-header a {
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 30px;
+}
+
+.app-header li {
+    display: inline-block;
+    margin: .5em;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav .active {
+    color: orange;
+    
+    }
+    

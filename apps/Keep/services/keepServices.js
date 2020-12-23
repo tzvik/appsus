@@ -1,4 +1,4 @@
-import { utilService } from './utilService.js';
+// import { utilService } from './utilService.js';
 import { storageService } from '../../../services/storageService.js';
 
 const KEY = 'keepDB';
@@ -42,7 +42,7 @@ function _add(keep) {
     };
     gKeeps = [keepToAdd, ...gKeeps];
     _saveKeepsToStorage();
-    return Promise.resolve(keepToAdd); 
+    return Promise.resolve(keepToAdd);
 }
 
 function _update(keep) {
@@ -77,31 +77,46 @@ function _getDemoKeeps() {
     const keeps = [
         {
             type: "NoteText",
+            id: 1,
             isPinned: true,
             info: {
-            txt: "Fullstack Me Baby!"
-            }
-            },
-            {
-            type: "NoteImg",
-            info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
+                title:"note 3",
+                txt: "Fullstack Me Baby!",
+                label: "a text",
             },
             style: {
-            backgroundColor: "#00d"
+                backgroundColor: "#00d"
             }
-            },
-            {
-            type: "NoteTodos",
+        },
+        {
+            type: "NoteImg",
+            id: 2,
+            isPinned: false,
             info: {
-            label: "How was it:",
-            todos: [
-            { txt: "Do that", doneAt: null },
-            { txt: "Do this", doneAt: 187111111 }
-            ]
+                title: "Me playing Mi",
+                label: "an image",
+                url: "http://some-img/me",
+            },
+            style: {
+                backgroundColor: "#00d"
             }
+        },
+        {
+            type: "NoteTodos",
+            id: 3,
+            isPinned: false,
+            info: {
+                title:"note 3",
+                label: "How was it:",
+                todos: [
+                    { txt: "Do that", doneAt: null },
+                    { txt: "Do this", doneAt: 187111111 }
+                ]
+            },
+            style: {
+                backgroundColor: "#00d"
             }
+        }
     ];
     return keeps;
 }

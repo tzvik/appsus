@@ -1,11 +1,13 @@
+import { KeepPreview } from "./KeepPreview.jsx";
 
-export class KeepList extends React.Component {
-    render() {
-        return (
-            <div>
-                                <h1>KeepList</h1>
-
-            </div>
-        )
-    }
+export function KeepList({ keeps }) {
+    
+    return (
+        <section className="keeps-list">
+            {keeps.map(keep => {
+                return <KeepPreview key={keep.id} keep={keep} />;
+            })
+            }
+        </section>
+    )
 }
