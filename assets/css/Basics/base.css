@@ -8,8 +8,9 @@ html, body, div, header, h1 {
 }
 
 body {
-    background-color: rgb(62, 161, 194);
+    background-color: #e8e8e8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 
 a {
