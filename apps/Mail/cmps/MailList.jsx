@@ -1,11 +1,16 @@
+// import { PetPreview } from "./PetPreview.jsx";
+import {MailPreview} from "./MailPreview.jsx"
 
-export class MailList extends React.Component {
-    render() {
-        return (
-            <div>
-                                <h1>MailList</h1>
+export function MailList({ mails }) {
 
-            </div>
-        )
-    }
+    return (
+        <section className="mail-list">
+            {mails.map(mail => {
+                return <MailPreview key={mail.id} mail={mail}/> ;
+            })
+            }
+        </section>
+    );
 }
+
+

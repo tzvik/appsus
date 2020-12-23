@@ -1,11 +1,11 @@
 
-export class MailPreview extends React.Component {
-    render() {
-        return (
-            <div>
-                                <h1>MailPreview</h1>
+export function MailPreview({ mail, onRemove }) {
 
-            </div>
-        )
-    }
+    return <article className="mail-preview">
+        
+            <h1>mail preview {mail.id}</h1>
+          
+
+    </article>
+
 }
