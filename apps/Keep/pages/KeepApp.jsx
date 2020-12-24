@@ -37,6 +37,7 @@ export class KeepApp extends React.Component {
             .then(savedKeep => {
                 console.log('Saves succesfully', savedKeep);
                 this.loadKeeps()
+                // this.setState({keeps: [savedKeep, ...this.state.keeps]})
                 // this.props.history.push('/keep');
             })
 
