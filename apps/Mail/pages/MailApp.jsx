@@ -1,6 +1,7 @@
 
 import { mailService } from "../../Mail/services/mailService.js";
 import { MailList } from "../cmps/MailList.jsx";
+const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
 
@@ -22,52 +23,60 @@ export class MailApp extends React.Component {
     loadmails = () => {
         mailService.query().then(mails => {
             this.setState({ mails });
-            // console.log('mails',mails);
         });
     }
 
     getMailsForDisplay() {
-        // const { filterBy } = this.state;
-        // const filterRegex = new RegExp(filterBy.name, 'i');
-        // return this.state.pets.filter(pet => filterRegex.test(pet.name));
-
-        return this.state.mails;
+        const { filterBy } = this.state;
+        const filterRegex = new RegExp(filterBy.subject, 'i');
+        return this.state.mails.filter(mail => filterRegex.test(mail.subject));
     }
 
+    onRemoveMail = (mailId) => {
+        console.log(mailId);
+        mailService.remove(mailId).then(() => {
+            this.loadmails()
+        })
 
+    }
 
 
 
     render() {
         const mailsForDisplay = this.getMailsForDisplay();
         return (
-            <section className="mail-app">
-                <h1>MailApp</h1>
-                {/* <ul>
-                    <li> {mails.map(mail => {
-                        return <article key={mail.id}>
-                            <h1>key={mail.id} </h1>
-                            <h2></h2>
-                        </article>;
-                    })
-                    }</li>
-                </ul> */}
-                <MailList mails={mailsForDisplay} />
+            <section className="mail-container">
+                <section className="side-bar">
+                    <nav className="mail-nav">
+                        <ul>
+                            <li><span className="fa fa-inbox"></span>compose</li>
+                            <li><span className="fa fa-star"></span>stared</li>
+                            <li>compose</li>
+                            <li>compose</li>
+                            <li>compose</li>
+
+
+
+                        </ul>
+
+
+
+                    </nav>
+
+
+
+                </section>
+
+                <section className="mail-app">
+                    <h1>MailApp</h1>
+                    {/* <PetFilter setFilter={this.onSetFilter} /> */}
+                    <Link className="btn" to="/mail/add">New Mail</Link>
+                    <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
+                </section>
             </section>
+
         )
     }
 }
 
 
-// render() {
-//     // const petsForDisplay = this.getPetsForDisplay()
-//     const petsForDisplay = this.petsForDisplay;
-//     return (
-//         <section className="pet-app">
-//             <PetFilter setFilter={this.onSetFilter} />
-//             <Link className="btn" to="/pet/edit">Add Pet</Link>
-//             <h2>My Pets</h2>
-//             <PetList pets={petsForDisplay} onRemove={this.onRemovePet} />
-//         </section>
-//     );
-// }
