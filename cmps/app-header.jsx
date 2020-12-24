@@ -12,17 +12,17 @@ export function AppHeader(props) {
             <button className="search fa fa-search"></button>
             <input type="search" placeholder="search notes" />
             <select id="selection" className="search-filter">
-                <option value="" selected >All</option>
+                <option value="" >All</option>
                 <option value="NoteText">Text</option>
                 <option value="NoteImg">Image</option>
                 <option value="NoteTodos">List</option>
             </select>
         </section>
         <nav>
-            <li><NavLink to="/mail"> <span class="fa fa-envelope "></span> mail </NavLink></li>
-            <li><NavLink to="/keep"><span class="fa fa-paperclip "></span> keep</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink exact to="/">Home</NavLink></li>
+            <li><NavLink to="/mail"> <span className="fa fa-envelope "></span> mail </NavLink></li>
+            <li><NavLink to="/keep"><span className="fa fa-paperclip "></span> keep</NavLink></li>
+            {/* <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink exact to="/">Home</NavLink></li> */}
             <span className="fa fa-th fa-lg"></span>
         </nav>
     </section>;

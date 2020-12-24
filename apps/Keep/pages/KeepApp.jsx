@@ -1,6 +1,7 @@
 
-import { keepService } from "../../Keep/services/keepServices.js";
+import { keepService } from "../services/keepService.js";
 import { KeepList } from "../cmps/keepList.jsx"
+import { KeepAdd } from "../cmps/KeepAdd.jsx"
 
 
 export class KeepApp extends React.Component {
@@ -24,6 +25,27 @@ export class KeepApp extends React.Component {
     }
 
 
+    onRemovekeep = (keepId) => {
+        keepService.remove(keepId).then(() => {
+            this.loadKeeps()
+        })
+    }
+
+
+    onSaveKeep = (keep) => {
+        keepService.save(keep)
+            .then(savedKeep => {
+                console.log('Saves succesfully', savedKeep);
+                this.loadKeeps()
+                // this.props.history.push('/keep');
+            })
+
+    };
+
+
+
+
+
     onSetFilter = (filterBy) => {
         console.log('filterBy:', filterBy);
         this.setState({ filterBy });
@@ -34,27 +56,23 @@ export class KeepApp extends React.Component {
         return this.state.keeps.filter(keep => filterRegex.test(keep.info.title));
     }
 
+
+
+
     render() {
         const keepsForDisplay = this.keepsForDisplay;
+        console.log('keeps', this.state.keeps)
 
         return (
             <section className="keep-app">
                 {/* <KeepFilter setFilter={this.onSetFilter} /> */}
                 {/* <Link className="btn" to="/keep/edit">Add keep</Link> */}
                 <h2>My Keeps</h2>
-                <section className="create-keep">
-                    <input type="text" placeholder="what's on your mind..." />
-                    <div className="keep-type-icons">
-                        <i title="Text note" className="fa fa-font visible"></i>
-                        <i title="Image note" className="fa fa-image visible"></i>
-                        <i title="List note" className="fa fa-list visible"></i>
-                    </div>
-                </section>
+                <KeepAdd onSaveKeep={this.onSaveKeep}/>
                 <h3>Pinned Notes</h3>
                 <section className="pinned-keeps"></section>
                 <h3>Other Notes</h3>
-
-                <KeepList keeps={keepsForDisplay} />
+                <KeepList keeps={keepsForDisplay} onRemove={this.onRemovekeep} />
             </section>
         )
     }

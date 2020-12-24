@@ -76,3 +76,10 @@ body {
     padding: 7px;
 }
 
+.fa-trash {
+color: rgb(92, 106, 121);
+}
+
+.fa-trash:hover {
+    color: red;
+    }
