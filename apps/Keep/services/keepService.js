@@ -36,8 +36,20 @@ function save(keep) {
 }
 
 function _add(keep) {
+    console.log('add ping',keep)
+    const {inpt,curType} = keep
     const keepToAdd = {
         id: utilService.makeId(),
+        isPinned: true,
+        type:curType,
+        info: {
+            title:"note 3",
+            txt: inpt,
+            label: "a text",
+        },
+        style: {
+            backgroundColor: "#00d"
+        },
         ...keep
     };
     gKeeps = [keepToAdd, ...gKeeps];
@@ -76,9 +88,9 @@ function _saveKeepsToStorage() {
 function _getDemoKeeps() {
     const keeps = [
         {
-            type: "NoteText",
             id: 1,
             isPinned: true,
+            type: "NoteText",
             info: {
                 title:"note 3",
                 txt: "Fullstack Me Baby!",
@@ -89,9 +101,9 @@ function _getDemoKeeps() {
             }
         },
         {
-            type: "NoteImg",
             id: 2,
             isPinned: false,
+            type: "NoteImg",
             info: {
                 title: "Me playing Mi",
                 label: "an image",
@@ -102,9 +114,9 @@ function _getDemoKeeps() {
             }
         },
         {
-            type: "NoteTodos",
             id: 3,
             isPinned: false,
+            type: "NoteTodos",
             info: {
                 title:"note 3",
                 label: "How was it:",

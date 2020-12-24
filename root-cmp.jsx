@@ -20,14 +20,13 @@ export class App extends React.Component {
                     <Switch>
                         <Route path="/about" component={About} />
                         <Route path="/mail" component={MailApp} />
+                        {/* <Route path="/keep/:keepId" component={KeepApp} /> */}
                         <Route path="/keep" component={KeepApp} />
                         <Route path="/" component={Home} />
                     </Switch>
-
                 </section>
             </Router>
         );
     }
 }
-
 
