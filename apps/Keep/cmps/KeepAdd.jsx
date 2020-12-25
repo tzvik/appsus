@@ -9,16 +9,12 @@ export class KeepAdd extends React.Component {
             }
         }
     
-
-
-
     onInputChange = (ev) => {
         const value = ev.target.value;
         const keep = { ...this.state.keep };
         keep[ev.target.name] = value;
         this.setState({ keep });
     };
-
 
     onSaveKeep = (ev) => {
         ev.preventDefault();
@@ -56,9 +52,9 @@ onSetList = () => {
 }
 
 
-
 render() {
-    return (
+    return (        
+
         <form className="create-keep" onSubmit={this.onSaveKeep}>
             <input
                 name="inpt"
@@ -78,5 +74,6 @@ render() {
     )
 }
 }
+
 
 

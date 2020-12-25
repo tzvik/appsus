@@ -1,37 +1,20 @@
-
-const { Link } = ReactRouterDOM;
+import { NoteTxt } from "./NoteTxt.jsx";
+import { NoteImg } from "./NoteImg.jsx";
+// import { NoteTodos } from "./NoteTodos.jsx";
+// import { NoteVideo } from "./NoteVideo.jsx";
+import { DynamicKeepTypeCmp } from "./DynamicKeepTypeCmp.jsx";
 
 export function KeepPreview({ keep, onRemove }) {
 
-    return <article className="keep-note">
-        {/* <NoteTxt> */}
-        {/* <NoteImg> */}
-        {/* <NoteTodo> */}
-        <Link to={`/keep/${keep.id}`}>
-        <div className="note-content">
-            <p contentEditable="true">
-            </p>
-                {keep.info.txt}
+    return (
+        <section  className="keeps-list">
+            <DynamicKeepTypeCmp currType={keep.type}  keep={keep} onRemove={onRemove} />
+            </section>
 
-            <ul className="note-labels">
-                <li> {keep.type}</li>
-            </ul>
-        </div>
-        </Link>
-        <div className="keep-note-menue">
-            <i title="Text note" className="fa fa-font visible"></i>
-            {/* <i title="Image note" className="fa fa-image visible"></i> */}
-            {/* <i title="List note" className="fa fa-list visible"></i> */}
-            {/* <i title="Edit note" className="fa fa-edit"></i> */}
-            {/* <i title="Mark note" className="fa fa-check marked"></i> */}
-            <i title="Change note color" className="fa fa-paint-brush info colors dropdown"></i>
-            <i title="Clone note" className="fa fa-clone info"></i>
-            <i title="Pin note" className="fa fa-paperclip "></i>
-            <i title="Edit note" className="fa fa-edit" ></i>
-            <i title="Delete note" className="fa fa-trash danger"
-                onClick={() => { onRemove(keep.id) }}>    </i>
-        </div>
-
-    </article>
-
+    )
 }
+
+
+
+
+
