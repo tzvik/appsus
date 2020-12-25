@@ -46,6 +46,7 @@ export class MailApp extends React.Component {
         const mailsForDisplay = this.getMailsForDisplay();
         return (
             <section className="mail-container">
+                <h1>Liel's Changes</h1>
                 <section className="side-bar">
                     <button className="compose-btn">
                         <i className="fa fa-plus"></i>
