@@ -60,7 +60,7 @@ body {
 }
 
 
-/* KeepAdd */
+/* KeepNote */
 
 .keep-note {
     background-color: orange;
@@ -78,16 +78,30 @@ body {
 color: white
 }
 
+
+/* keeps */
+
+.keep-note img, video, audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* menue */
+
+.note-type {
+    color: rgba(44, 43, 43, 0.678);
+    margin-bottom: 5px;
+}
 .keep-note-menue {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: #333;
+    color:  rgba(39, 37, 37, 0.322);
     padding: 7px;
 }
 
 .fa-trash {
-color: rgb(92, 106, 121);
+color: rgba(39, 37, 37, 0.322);
 }
 
 .fa-trash:hover {

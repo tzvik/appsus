@@ -44,9 +44,6 @@ export class KeepApp extends React.Component {
     };
 
 
-
-
-
     onSetFilter = (filterBy) => {
         console.log('filterBy:', filterBy);
         this.setState({ filterBy });
@@ -56,7 +53,6 @@ export class KeepApp extends React.Component {
         const filterRegex = new RegExp(filterBy.name, 'i');
         return this.state.keeps.filter(keep => filterRegex.test(keep.info.title));
     }
-
 
 
 
