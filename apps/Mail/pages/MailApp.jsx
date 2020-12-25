@@ -47,30 +47,24 @@ export class MailApp extends React.Component {
         return (
             <section className="mail-container">
                 <section className="side-bar">
+                    <button className="compose-btn">
+                        <i className="fa fa-plus"></i>
+                        <Link className="new-mail" to="/mail/add">New Mail</Link>
+                    </button>
                     <nav className="mail-nav">
                         <ul>
-                            <li><span className="fa fa-inbox"></span>compose</li>
-                            <li><span className="fa fa-star"></span>stared</li>
-                            <li>compose</li>
-                            <li>compose</li>
-                            <li>compose</li>
-
-
-
+                            <li className="selected"><span className="fa fa-inbox"></span><i className="space-left">Inbox</i> </li>
+                            <li><span className="fa fa-star"></span><i className="space-left">stared</i> </li>
+                            <li><span className="fa fa-share-square"></span><i className="space-left">Sent Mail</i></li>
+                            <li><img src="../../../assets/img/firstdraft.svg" className="draft"></img><i className="space-left">Drafts</i></li>
+                            {/* <img src="../../../assets/img/firstdraft.svg" ></img> */}
                         </ul>
-
-
-
                     </nav>
-
-
-
                 </section>
 
                 <section className="mail-app">
-                    <h1>MailApp</h1>
+                    <h1>Mail App</h1>
                     {/* <PetFilter setFilter={this.onSetFilter} /> */}
-                    <Link className="btn" to="/mail/add">New Mail</Link>
                     <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
                 </section>
             </section>

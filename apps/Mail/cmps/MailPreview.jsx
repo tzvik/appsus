@@ -4,7 +4,7 @@ export function MailPreview({ mail, onRemove }) {
 
     var date = new Date(mail.sentAt).toLocaleDateString();
     return <article className="mail-preview">
-        <h1>mail preview {mail.subject}</h1> <span> {mail.body}</span> <span>{date}</span>
+        <h1>  {mail.subject}</h1> <span> {mail.body}</span> <span>{date}</span>
         <Link to={`/mail/${mail.id}`}>
             <h1>{mail.subject}</h1>
        

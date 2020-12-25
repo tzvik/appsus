@@ -1,16 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, i, ul, li, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, footer, header, nav, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
 body {
     background-color: #e8e8e8;
 }
 
-/* MAIL APP */
 
-.mail-app{
-background-color: yellow;
-
-
-
-}
-
+/* SIDE NAV */
 .mail-container {
     display:grid;
     flex-direction: column-reverse;
@@ -18,28 +24,99 @@ background-color: yellow;
 }
 
 .side-bar{
-    background-color: pink;
+    display:flex;
+    flex-direction: column;
+    /* background-color: pink; */
     height: 100vh;
-    /* width: */
+    flex: 0 0 250px;
+    max-width: 250px;
+    width: 250px;
+    position: sticky;
+    top: 75px;
+    align-items: center;
 }
 
+.compose-btn{
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    background: white;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    /* font: 400 13.3333px Arial; */
+    border-radius: 50px;
+    border: 0;
+    color: #5f6368;
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.4s;
+    
+}
+
+.new-mail{
+    color: #5f6368;
+}
 .mail-nav {
-background-color: white;
-width: 70%;
-border-radius: 10px;
+    /* background-color: white; */
+    width: 70%;
+    border-radius: 10px;
 }
 
 .mail-nav ul {
     list-style: none;
+    /* border-bottom: 1px solid #e3e8ea; */
+    padding-right: 5px;
+    display: block;
+    margin-block-start: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 20px;
+    
+}
+
+.mail-nav li{
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.mail-nav li:hover {
+    background-color: #f5f7f7;
+}
+
+li.selected{
+    background-color: #fce8e6;
+    color: #d93025;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 190px;
+}
+
+li.draft{
+    width: 12px;
+    height: auto;
+}
+
+.space-left{
+padding-left: 10px;
+}
+
+/* MAIL APP */
+.mail-app{
+    background-color: yellow;
 
 }
 
+.mail-app h1{
+    justify-content: center;
+    display: flex;
+}
 .mail-list{
     background-color: green;
 }
 
 .mail-preview{
-    background-color:lightgray;
+    background-color:#f5f7f7;
     display:flex;
     justify-content: space-between;
     border:1px solid gray;
