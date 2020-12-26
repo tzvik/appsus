@@ -11,13 +11,7 @@ export class MailAdd extends React.Component {
         }
     };
 
-    // { id: 'm101', subject: 'Wassap1?', body: 'Pick up1!', isRead: false, sentAt : 1551133930594 },
-
-    componentDidMount() {
-
-    }
-
-    onSaveMail = (ev) => {//on submit
+    onSaveMail = (ev) => {
         ev.preventDefault();
 
         mailService.save(this.state.mail)
@@ -27,8 +21,7 @@ export class MailAdd extends React.Component {
             })
     };
 
-
-    onInputChange = (ev) => {//on input change
+    onInputChange = (ev) => {
         const value = (ev.target.type === 'number') ? +ev.target.value : ev.target.value;
         const mail = { ...this.state.mail };
         mail[ev.target.name] = value;
@@ -38,10 +31,8 @@ export class MailAdd extends React.Component {
     };
 
     render() {
-        // console.log(this.onSaveMail());
         return (
             <form onSubmit={this.onSaveMail}>
-
                 <input value={this.state.mail.subject}
                     placeholder="subject" type="text" name="subject"
                     onChange={this.onInputChange} />

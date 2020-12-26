@@ -1,6 +1,7 @@
 
 import { mailService } from "../../Mail/services/mailService.js";
 import { MailList } from "../cmps/MailList.jsx";
+import { MailFilter } from "../cmps/MailFilter.jsx";
 const { Link } = ReactRouterDOM;
 
 export class MailApp extends React.Component {
@@ -9,16 +10,12 @@ export class MailApp extends React.Component {
         mails: [],
         filterBy: {
             subject: ''
-        },
+        }
     };
 
     componentDidMount() {
         this.loadmails();
     }
-
-    // componentWillUnmount() {
-    // }
-
 
     loadmails = () => {
         mailService.query().then(mails => {
@@ -33,14 +30,20 @@ export class MailApp extends React.Component {
     }
 
     onRemoveMail = (mailId) => {
-        console.log(mailId);
         mailService.remove(mailId).then(() => {
             this.loadmails()
         })
-
     }
 
+    onReadStatus = (mailId) => {
+        mailService.readStatus(mailId).then(() => {
+            this.loadmails()
+        })
+    }
 
+    onSetFilter = (filterBy) => {
+        this.setState({ filterBy });
+    }
 
     render() {
         const mailsForDisplay = this.getMailsForDisplay();
@@ -49,7 +52,7 @@ export class MailApp extends React.Component {
                 <section className="side-bar">
                     <button className="compose-btn">
                         <i className="fa fa-plus"></i>
-                        <Link className="new-mail" to="/mail/add">New Mail</Link>
+                        <Link className="space-left new-mail" to="/mail/add">New Mail</Link>
                     </button>
                     <nav className="mail-nav">
                         <ul>
@@ -57,18 +60,25 @@ export class MailApp extends React.Component {
                             <li><span className="fa fa-star"></span><i className="space-left">stared</i> </li>
                             <li><span className="fa fa-share-square"></span><i className="space-left">Sent Mail</i></li>
                             <li><img src="../../../assets/img/firstdraft.svg" className="draft"></img><i className="space-left">Drafts</i></li>
-                            {/* <img src="../../../assets/img/firstdraft.svg" ></img> */}
                         </ul>
                     </nav>
                 </section>
 
+                <div className="mobile-nav-icon">
+                    <span className="fa fa-bars fa-lg"></span>
+                </div>
                 <section className="mail-app">
-                    <h1>Mail App</h1>
-                    {/* <PetFilter setFilter={this.onSetFilter} /> */}
-                    <MailList mails={mailsForDisplay} onRemove={this.onRemoveMail} />
+                    <section className="mails-header">
+                        <span className="mails-header-subject">
+                            <h1>SUBJECT</h1>
+                            <MailFilter setFilter={this.onSetFilter} />
+                        </span>
+                        <span className="mails-header-sent-at"><h1>SENT DATE</h1></span>
+                    
+                    </section>
+                    <MailList mails={mailsForDisplay} onReadStatus={this.onReadStatus} onRemove={this.onRemoveMail} />
                 </section>
             </section>
-
         )
     }
 }
