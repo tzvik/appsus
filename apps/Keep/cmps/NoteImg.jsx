@@ -7,7 +7,7 @@ export function NoteImg({ keep, onRemove }) {
         <section className="keep-note">
             <i title="Image note" className="note-type fa fa-image visible"></i>
             <Link to={`/keep/${keep.id}`}>
-                <img src={  }
+                <img src={keep.info.url  }
                     alt="" />
 
                 <NoteMenue keep={keep} onRemove={onRemove} />

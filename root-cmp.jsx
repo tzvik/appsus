@@ -4,7 +4,7 @@ import { Home } from './pages/home.jsx';
 import { KeepApp} from './apps/Keep/pages/KeepApp.jsx'
 import { MailApp} from './apps/Mail/pages/MailApp.jsx'
 import { MailAdd} from './apps/Mail/pages/MailAdd.jsx'
-import { MailDetails} from './apps/Mail/pages/MailDetails.jsx'
+import { MailDetails} from './apps/Mail/cmps/MailDetails.jsx'
 
 const Router = ReactRouterDOM.HashRouter;
 const { Route, Switch } = ReactRouterDOM;

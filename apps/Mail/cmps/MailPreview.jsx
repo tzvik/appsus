@@ -1,27 +1,36 @@
-const { Link } = ReactRouterDOM;
+import { MailDetails } from "./MailDetails.jsx"
+// const { Link } = ReactRouterDOM;
 
-export function MailPreview({ mail, onRemove }) {
+export class MailPreview extends React.Component {
 
-    var date = new Date(mail.sentAt).toLocaleDateString();
-    return <li className="mail-preview">
-        <section>
-            <h1>  {mail.subject}</h1> <span> {mail.body}</span> <span>{date}</span>
-            <Link to={`/mail/${mail.id}`}>
-                <h1>{mail.subject}</h1>
+    state = {
+        isExpand: false
+    }
 
-            </Link>
+    showMore = () => {
+        this.setState((prevState) => {
+            return { isExpand: !prevState.isExpand }
+        })
+    }
 
-            <div>
-                <Link className="mail-edit-link" to={`/mail/${mail.id}`}>Edit mail</Link>
-                <button onClick={() => {
-                    onRemove(mail.id)
-                }}
-                ><span className="fa fa-trash"></span></button>
-
-            </div>
-        </section>
-
-
-    </li>
-
+    date = new Date(this.props.mail.sentAt).toLocaleDateString();
+    render() {
+        const { mail, onReadStatus, onRemove } = this.props
+        return <li onClick={this.showMore}>
+            <section className="mail-preview-container" >
+                <div className={mail.isRead ? 'mail-preview read' : 'mail-preview'} onClick={() => {
+                    onReadStatus(mail.id)
+                }} >
+                    <span className="preview-subject">{mail.subject}</span>
+                    <span className="sent-at">{this.date}</span>
+                </div>
+                <section>
+                    {
+                        this.state.isExpand && <MailDetails mail={mail} onReadStatus={onReadStatus} onRemove={onRemove} />
+                    }
+                </section>
+            </section>
+        </li>
+    }
 }
+
