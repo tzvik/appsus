@@ -1,12 +1,13 @@
 
+const { Link } = ReactRouterDOM;
 
 export class Home extends React.Component {
-    
+
     state = {
-      
+
     }
 
- 
+
 
     componentDidMount() {
 
@@ -14,9 +15,19 @@ export class Home extends React.Component {
 
     render() {
         return (
-            <section >
-                <h2>Home Sweet Home</h2>
-                <iframe src="https://giphy.com/embed/I7p8K5EY9w9dC" width="480" height="369" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/futbol-I7p8K5EY9w9dC">via GIPHY</a></p>
+            <section className="welcome-splan">
+                <h1>Pick your <span className="orange">wepon</span> </h1>
+                
+                <div className="services">
+                    <Link className="fa fa-envelope" to={`/mail/`}>
+                    </Link>
+
+                    <Link className="fa fa-paperclip" to={`/keep/`}>
+                 
+                    </Link>
+
+                </div>
+
             </section>
         )
     }

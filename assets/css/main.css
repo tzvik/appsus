@@ -3,6 +3,7 @@
 /* Base: */
 
 @import './Basics/base.css';
+@import './Basics/home.css';
 
 /* Components: */
 @import './Keep/keep.css' ; 
@@ -10,13 +11,4 @@
 @import './Cmps/AppHeader.css';
 
 
-/* Base:
-@import '../fonts/fontawesome/fontawesome-webfont.ttf'
- */
-
-
-/* body {
-    background-color: lightblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-} */
 

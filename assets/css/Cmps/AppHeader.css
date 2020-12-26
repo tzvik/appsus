@@ -5,12 +5,12 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 20px;
- }
+}
 
- .app-header nav {
-     margin-right: 10px;
-     margin-bottom: 5px;
- }
+.app-header nav {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
 
 .app-header h1 {
     font-size: 1.5em;
@@ -18,20 +18,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .app-header ul {
     list-style: none;
     display: flex;
     margin-right: 1px;
-    
 }
 
 .app-header .active {
     color: orange;
-    
-    }
+}
 
 .app-header a {
     text-decoration: none;
@@ -53,8 +50,6 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    
-    
 }
 
 .app-header .search input {
@@ -64,18 +59,30 @@
     height: 40px;
     font-size: 1em;
     text-align: left;
-    
-    
 }
+
 .app-header .search input:focus {
     outline: none !important;
 }
 
 .app-header .search-filter {
     height: 40px;
-
 }
 
+@media only screen and (max-width: 800px) {
+    .app-header h1  {
+        display: none;
+    }
+    .fa-th:before {
+        display: none;
+    }
+}
 
-
-    
+@media only screen and (max-width: 610px) {
+.app-header a {
+    font-size: 20px;
+}
+.nav-txt {
+display: none;
+}
+}

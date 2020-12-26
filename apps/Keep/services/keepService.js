@@ -97,7 +97,7 @@ function _getDemoKeeps() {
                 label: "a text",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#ffa500"
             }
         },
         {
@@ -121,8 +121,9 @@ function _getDemoKeeps() {
                 title: "note 3",
                 label: "How was it:",
                 todos: [
-                    { txt: "Do that", doneAt: null },
-                    { txt: "Do this", doneAt: 187111111 }
+                    { id: 1, txt: "Finish Sprint", doneAt: null },
+                    { id: 2, txt: "Work on lists", doneAt: 187111111 },
+                    { id: 3, txt: " Complete Actions", doneAt: 187111111 }
                 ]
             },
             style: {
@@ -135,37 +136,36 @@ function _getDemoKeeps() {
             type: "NoteText",
             info: {
                 title: "note 3",
-                txt: "Fullstack Me Baby!",
+                txt: "YESSSSS!",
                 label: "a text",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#ffa500"
             }
-        },
-        {
+        }, {
             id: 5,
-            isPinned: true,
-            type: "NoteText",
+            isPinned: false,
+            type: "NoteImg",
             info: {
-                title: "note 3",
-                txt: "Fullstack Me Baby!",
-                label: "a text",
+                title: "Me playing Mi",
+                label: "an image",
+                url: "https://yesno.wtf/assets/yes/6-304e564038051dab8a5aa43156cdc20d.gif",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#f08080"
             }
-        },
-        {
+        }
+        , {
             id: 6,
             isPinned: true,
             type: "NoteText",
             info: {
                 title: "note 3",
-                txt: "Fullstack Me Baby!",
+                txt: "What is a programmer's favorite hangout place? Foo bar...",
                 label: "a text",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#ffa500"
             }
         },
         {
@@ -178,59 +178,69 @@ function _getDemoKeeps() {
                 label: "a text",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#ffa500"
             }
         },
         {
             id: 8,
-            isPinned: true,
-            type: "NoteText",
-            info: {
-                title: "note 3",
-                txt: "What is a programmer's favorite hangout place? Foo bar...",
-                label: "a text",
-            },
-            style: {
-                backgroundColor: "#00d"
-            }
-        },
-        {
-            id: 9,
-            isPinned: true,
-            type: "NoteText",
-            info: {
-                title: "note 3",
-                txt: "Definition, Algorithm: Word used by programmers when they do not want to explain what they did.",
-                label: "a text",
-            },
-            style: {
-                backgroundColor: "#00d"
-            }
-        },
-        {
-            id: 10,
             isPinned: false,
             type: "NoteImg",
             info: {
                 title: "Me playing Mi",
                 label: "an image",
-                url: "https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif",
+                url: "https://img.mako.co.il/2016/06/04/Eretz13_14_06_i.jpg",
+            },
+            style: {
+                backgroundColor: "#f08080"
+            }
+        }
+        ,
+        {
+            id: 9,
+            isPinned: false,
+            type: "NoteTodos",
+            info: {
+                title: "note 3",
+                label: "How was it:",
+                todos: [
+                    { id: 1, txt: "finish", doneAt: null },
+                    { id: 2, txt: "eat pancakes", doneAt: 187111111 },
+                    { id: 3, txt: "foot massage", doneAt: 187111111 }
+                ]
             },
             style: {
                 backgroundColor: "#00d"
+            }
+        },
+
+        {
+            id: 10,
+            isPinned: true,
+            type: "NoteText",
+            info: {
+                title: "note 3",
+                txt: "Something important",
+                label: "a text",
+            },
+            style: {
+                backgroundColor: "#ffa500"
             }
         },
         {
             id: 11,
             isPinned: false,
-            type: "NoteImg",
+            type: "NoteTodos",
             info: {
-                title: "Me playing Mi",
-                label: "an image",
-                url: "https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif",
+                title: "note 3",
+                label: "How was it:",
+                todos: [
+                    { id: 1, txt: "finish", doneAt: null },
+                    { id: 2, txt: "eat pancakes", doneAt: 187111111 },
+                    { id: 3, txt: "foot massage", doneAt: 187111111 }
+                ]
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#f08080"
             }
         },
         {
@@ -243,7 +253,7 @@ function _getDemoKeeps() {
                 url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#f08080"
             }
         },
         {
@@ -253,23 +263,23 @@ function _getDemoKeeps() {
             info: {
                 title: "Me playing Mi",
                 label: "an image",
-                url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg",
+                url: "https://cdn.pixabay.com/photo/2018/04/16/16/16/sunset-3325080_1280.jpg",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#f08080"
             }
         },
         {
             id: 14,
-            isPinned: false,
-            type: "NoteImg",
+            isPinned: true,
+            type: "NoteText",
             info: {
-                title: "Me playing Mi",
-                label: "an image",
-                url: "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e8b82dbd7fe9677e9218686a427ea6d7&auto=format&fit=crop&w=1350&q=80",
+                title: "note 3",
+                txt: "כמעט שבת שלום גם לכם!",
+                label: "a text",
             },
             style: {
-                backgroundColor: "#00d"
+                backgroundColor: "#ffa500"
             }
         },
 

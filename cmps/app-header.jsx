@@ -19,8 +19,8 @@ export function AppHeader(props) {
             </select>
         </section>
         <nav>
-            <li><NavLink to="/mail"> <span className="fa fa-envelope "></span> mail </NavLink></li>
-            <li><NavLink to="/keep"><span className="fa fa-paperclip "></span> keep</NavLink></li>
+            <li><NavLink to="/mail"> <span className="fa fa-envelope "></span> <span className="nav-txt">mail</span></NavLink></li>
+            <li><NavLink to="/keep"><span className="fa fa-paperclip "></span><span className="nav-txt">keep</span></NavLink></li>
             {/* <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink exact to="/">Home</NavLink></li> */}
             <span className="fa fa-th fa-lg"></span>

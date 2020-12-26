@@ -4,7 +4,7 @@ import { NoteMenue } from "./NoteMenue.jsx";
 export function NoteVideo ({keep, onRemove }) {
     
     return (
-        <section className="keep-note">
+        <section className="keep-note keep-video">
        <Link to={`/keep/${keep.id}`}>
                       <img src={keep.info.url}
                 alt="" />

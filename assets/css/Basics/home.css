@@ -1,0 +1,43 @@
+
+.welcome-splan {
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-splan .services {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: s;
+
+}
+
+.welcome-splan h1 {
+font-family: 'Courier New', Courier, monospace;
+color: #333;
+text-align: center;
+margin-top: 20vh;
+font-size: 4em;
+
+}
+
+.welcome-splan .orange{
+color: orange;
+}
+
+
+.welcome-splan .fa {
+    color:  #333 ;
+    font-size: 200px;
+    display: flex;
+    flex-grow: 1;
+
+}
+
+.welcome-splan .fa:hover {
+    color: orange ;
+    text-decoration: none;
+   }
